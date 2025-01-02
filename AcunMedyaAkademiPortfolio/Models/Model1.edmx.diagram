@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="DbDominicPortfolioModel.TblService" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbDominicPortfolioModel.TblTestimonial" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="DbDominicPortfolioModel.FK_TblProject_TblCategory" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbDominicPortfolioModel.TblContact" Width="1.5" PointX="3.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

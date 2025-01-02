@@ -18,6 +18,13 @@ namespace AcunMedyaAkademiPortfolio.Controllers
         [HttpGet]
         public ActionResult CreateProject()
         {
+            List<SelectListItem> values = (from x in db.TblCategory.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
             return View();
         }
         [HttpPost]
@@ -34,6 +41,29 @@ namespace AcunMedyaAkademiPortfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("ProjectList");
 
+        }
+        [HttpGet]
+        public ActionResult UpdateProject(int id)
+        {
+            List<SelectListItem> values1 = (from x in db.TblCategory.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.v = values1;
+            var value=db.TblProject.Find(id);
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult UpdateProject(TblProject p)
+        {
+            var value = db.TblProject.Find(p.ProjectId);
+            value.Description= p.Description;
+            value.ImageUrl= p.ImageUrl;
+            value.CategoryId= p.CategoryId;
+            db.SaveChanges();
+            return RedirectToAction("ProjectList");
         }
     }
 }

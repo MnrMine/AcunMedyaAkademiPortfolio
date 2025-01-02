@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,6 +158,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TblCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblContact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TblFeature.cs">
@@ -362,6 +366,9 @@
     <Content Include="Views\Project\ProjectList.cshtml" />
     <Content Include="Views\Category\CreateCategory.cshtml" />
     <Content Include="Views\Project\CreateProject.cshtml" />
+    <Content Include="Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Views\Project\UpdateProject.cshtml" />
+    <Content Include="Views\Contact\ContactList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

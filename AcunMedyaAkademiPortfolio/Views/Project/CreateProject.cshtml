@@ -1,4 +1,4 @@
-﻿
+﻿@model AcunMedyaAkademiPortfolio.Models.TblProject
 @{
     ViewBag.Title = "CreateProject";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -13,7 +13,7 @@
     <input type="text" class="table table-bordered" name="ImageUrl" />
     <br />
     <label>Proje Categorisi</label>
-    <input type="text" class="table table-bordered" name="CategoryId" />
+    @Html.DropDownListFor(x=>x.CategoryId, (List<SelectListItem>)ViewBag.v, new {@class="table table-bordered"})
     <br />
     <button class="btn btn-info" >Projeyi Kaydet</button>
 </form>

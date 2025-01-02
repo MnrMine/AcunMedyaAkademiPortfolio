@@ -1,0 +1,24 @@
+﻿@model AcunMedyaAkademiPortfolio.Models.TblProject
+@{
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Proje Güncelleme Sayfası</h2>
+<form method="post">
+    <label>Proje Id</label>
+    @Html.TextBoxFor(x => x.ProjectId, new { @class = "table table-bordered" })
+    <br />
+    <label>Proje Görsel Linki</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "table table-bordered" })
+    <br />
+    <label>Proje Categorisi</label>
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "table table-bordered" })
+    <br />
+    <label>Proje Açıklaması</label>
+    <textarea rows="4" class="table table-bordered" name="Description">@Model.Description</textarea>
+    <br />
+    <button class="btn btn-success">Proje Güncelle</button>
+
+</form>
+
